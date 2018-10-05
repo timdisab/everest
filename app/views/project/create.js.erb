@@ -1,1 +1,26 @@
-console.log("Project <%= @project.name %> saved like a mofo!");
+// Assign our project list, project_card view and a new empty div element to variables
+var projectList = document.getElementById('project-list')
+
+// Assign popover
+var projectPopover = document.getElementById('new-project-popover')
+
+// Assign input
+var projectNameInput = document.getElementById('project-name-input')
+
+// Call render method for new project_card
+var newProject = '<%= escape_javascript(render "project_card.html", project: @project) %>'
+
+// Create new element
+var div = document.createElement('div')
+
+// Add newProject string to empty HTML element we just created
+div.innerHTML = newProject
+
+// Append the first child of our div variable to our project project list
+projectList.appendChild(div.firstChild)
+
+// Hide popover
+projectPopover.classList.add('is-hidden')
+
+// Clear project name input
+projectNameInput.value = ''
