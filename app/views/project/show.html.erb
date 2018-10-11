@@ -3,7 +3,7 @@
     <%= @project.name %>
   </h1>
   <div class="row">
-    <%= render "feature_card", feature_link: '', title: "Campfire", img_src:
+    <%= render "feature_card", feature_link: project_chat_path(@project.id), title: "Campfire", img_src:
     "campfire", img_alt: "Campfire", description: "Chat with the group, ask
     questions and share stuff." %>
     <%= render "feature_card", feature_link: '', title: "Message Board", img_src:
